@@ -1,6 +1,12 @@
 'use strict'
 
 function NavBar(props) {
+  function login() {
+    provider.send('eth_requestAccounts', []).then((val) => {
+      console.log(val)
+    })
+  }
+
   return (
     <nav
       className="navbar navbar-expand-lg bg-white  navbar-transparent position-fixed w-100 top-0 z-index-3 shadow-none py-2 start-0 end-0"
@@ -14,18 +20,22 @@ function NavBar(props) {
           data-placement="bottom"
           target="_blank"
         >
-          UniFlip <span className="badge badge-xs badge-primary">BETA</span>
+          Smoke Battle{' '}
+          <span className="badge badge-xs badge-primary">BETA</span>
         </a>
         {props.activeAddress ? (
           <span
             id="balance-mobile"
             className="nav-link ps-2 d-flex justify-content-between align-items-center text-dark d-lg-none d-block"
           >
-            Balance: {props.tokenBalance} UNIVRS
+            Balance: {props.tokenBalance} SMOKE
           </span>
         ) : (
           <span id="btn-connect-mobile">
-            <button className="btn btn-sm bg-gradient-primary btn-round mb-0 ms-auto d-lg-none d-block">
+            <button
+              className="btn btn-sm bg-gradient-primary btn-round mb-0 ms-auto d-lg-none d-block"
+              onClick={() => login()}
+            >
               Connect Wallet
             </button>
           </span>
@@ -66,12 +76,13 @@ function NavBar(props) {
                   className="nav-link ps-2 d-flex justify-content-between align-items-center text-dark"
                   id="token-balance"
                 >
-                  Balance: {props.tokenBalance} UNIVRS
+                  Balance: {props.tokenBalance} SMOKE
                 </span>
               ) : (
                 <button
                   id="btn-connect"
                   className="btn btn-sm bg-gradient-primary btn-round mb-0 me-1"
+                  onClick={() => login()}
                 >
                   Connect Wallet
                 </button>
