@@ -139,7 +139,7 @@ function GamesTable(props) {
   }, [])
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <div className="row bg-white shadow mt-n7 border-radius-lg pb-4 p-3 mx-sm-0 mx-1 position-relative">
         <div className="row justify-content-center text-center ">
           <h3 className="text-uppercase opacity-8">Open Games</h3>

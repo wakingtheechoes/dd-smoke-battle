@@ -97,7 +97,7 @@ function CompletedGamesTable(props) {
 
   // console.log('rendering completed table rows', completed_games.toString())
   return (
-    <div className="container">
+    <div className="container-fluid">
       <div className="row bg-white shadow mt-5 border-radius-lg pb-4 p-3 mx-sm-0 mx-1 position-relative">
         <div className="row justify-content-center text-center text-uppercase opacity-8">
           <h3>Recent Completed Games</h3>
